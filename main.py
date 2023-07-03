@@ -40,12 +40,13 @@ class UserService(user_pb2_grpc.UserServiceServicer):
     def GetUser(self, request, context):
         print("new request incomming")
 
-        user_pb2.User()
-        # user.id = "211f9149-a999-4690-86aa-442438cd0959"
-        # user.name = "Thomas Laz"
-        # user.email = "thomas.laz@example.com"
+        user = user_pb2.User()
 
-        return user_pb2.User(**users[0])
+        user.id = "211f9149-a999-4690-86aa-442438cd0959"
+        user.name = "Thomas Laz"
+        user.email = "thomas.laz@example.com"
+
+        return user
 
 
 def serve():

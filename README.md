@@ -30,3 +30,7 @@ buf curl \
   -v \
   http://localhost:8089/userservice.v1.UserService/GetUser
 ```
+
+```sh
+PYTHONPATH="./gen" python client.py
+```
