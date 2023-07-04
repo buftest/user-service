@@ -37,7 +37,12 @@ public class UserRepository {
   );
 
   public User findUser(String userId) {
-    return users.stream().filter((u) -> u.getId() == userId).findFirst().orElseGet(null);
+    for (User user : users) {
+      if (user.getId().equals(userId)) {
+        return user;
+      }
+    }
+    return null;
   }
 
 
