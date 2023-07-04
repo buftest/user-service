@@ -32,5 +32,5 @@ buf curl \
 ```
 
 ```sh
-PYTHONPATH="./gen" python client.py
+PYTHONPATH="./gen" python main_client.py
 ```
