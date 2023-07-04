@@ -1,0 +1,51 @@
+plugins {
+  id 'java'
+}
+
+group = 'com.buftest'
+version = '0.0.1-SNAPSHOT'
+
+java {
+  sourceCompatibility = '17'
+}
+
+sourceSets {
+  main {
+    java {
+      srcDirs 'src'
+      srcDirs 'gen'
+    }
+  }
+}
+//  gen {
+//    java {
+//      srcDirs 'gen'
+//    }
+//    compileClasspath += configurations.compileClasspath // Include main dependencies
+//    runtimeClasspath += configurations.runtimeClasspath // Include main dependencies
+//  }
+//}
+
+//configurations.getByName("gen").extendsFrom(configurations.getByName("main"))
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  runtimeOnly 'io.grpc:grpc-netty-shaded:1.56.0'
+  implementation 'io.grpc:grpc-protobuf:1.56.0'
+  implementation 'io.grpc:grpc-stub:1.56.0'
+  implementation 'io.grpc:grpc-api:1.56.0'
+  implementation "io.grpc:grpc-services:1.56.0"
+  implementation group: 'com.google.api.grpc', name: 'proto-google-common-protos', version: '2.21.0'
+  implementation group: 'com.google.protobuf', name: 'protobuf-java', version: '3.21.0'
+  compileOnly 'org.apache.tomcat:annotations-api:6.0.53'
+
+//  genImplementation
+//  genImplementation ''
+}
+
+tasks.named('test') {
+  useJUnitPlatform()
+}
