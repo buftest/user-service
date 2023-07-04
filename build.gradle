@@ -1,5 +1,7 @@
 plugins {
   id 'java'
+  id 'application'
+
 }
 
 group = 'com.buftest'
@@ -48,4 +50,8 @@ dependencies {
 
 tasks.named('test') {
   useJUnitPlatform()
+}
+
+application {
+  mainClass = 'com.buftest.userservice.HelloWorldServer'
 }
