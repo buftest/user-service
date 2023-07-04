@@ -1,5 +1,7 @@
 version: v1
 name: buf.build/buftestorg/user-service
+deps:
+  - buf.build/googleapis/googleapis
 breaking:
   use:
     - FILE
