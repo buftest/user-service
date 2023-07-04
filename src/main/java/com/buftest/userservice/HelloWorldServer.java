@@ -22,6 +22,10 @@ public class HelloWorldServer {
       .build()
       .start();
     logger.info("Server started, listening on " + port);
+    setUpServerShutdown();
+  }
+
+  private void setUpServerShutdown() {
     Runtime.getRuntime().addShutdownHook(new Thread() {
       @Override
       public void run() {
