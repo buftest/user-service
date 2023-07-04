@@ -2,22 +2,18 @@
 
 ## requirements
 
-- python 3.11
-- poetry
+- java 20
 - precommit
-- pyenv (recommended)
 
 ## getting started
 
 ```sh
 $ git clone git@github.com:buftest/user-service.git && cd user-service
-$ pyenv virtualenv 3.11.3 $(basename `pwd`)
-$ pyenv local $(basename `pwd`)
-$ poetry install
 $ pre-commit install
 $ make proto
 $ make start
 ```
+
 ```sh
 $ grpcurl -vv -plaintext -d '{"user_id": "example"}' localhost:8089 userservice.v1.UserService/GetUser
 ```
